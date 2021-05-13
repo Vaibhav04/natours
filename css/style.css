@@ -1,0 +1,261 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+/* Basic app resetting */
+*,
+*::after,
+*::before {
+     margin: 0;
+     padding: 0;
+     box-sizing: inherit;
+}
+
+html {
+     /*  Will use rem for responsive design purpose*/
+     /* Using 10 px by default of given user agent fon size which is 16px (10 / 16)  */
+     /* Using percentage so as not to restrict the user to use fixed fontsize set by us */
+     font-size: 62.5%;
+}
+
+body {
+     font-family: "Lato", sans-serif;
+     font-weight: 400;
+     font-size: 1.6rem;
+     line-height: 1.7;
+     color: #777;
+     padding: 3rem;
+     
+     /* Include margin and padding inside the box*/
+     box-sizing: border-box;
+}
+
+.header {
+     position: relative;
+     height: 95vh;
+     background-image: linear-gradient(to right, rgba(126, 213, 111, 0.8), rgba(85, 197, 122, 0.8)),
+          url("../img/hero.jpg");
+     /* Whatever the width of viewport it will try to fit the element inside box*/
+     background-size: cover;
+     background-position: top;
+     clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
+}
+
+.header__logo-box {
+     position: absolute;
+     top: 4rem;
+     left: 4rem;
+}
+
+.header__logo {
+     height: 3.5rem;
+}
+
+.header__text-box {
+     /* Positioning is in relation to the parent element */
+     position: absolute;
+     top: 40%;
+     left: 50%;
+     /* Shift half to the top and half to the left to make the center of the div centered to the header div */
+     /* Translate is in relation to the element itself */
+     transform: translate(-50%, -50%);
+     -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+     -ms-transform: translate(-50%, -50%);
+     -o-transform: translate(-50%, -50%);
+
+     /* ------------------------------------------ */
+     /* For inline block element they will be treated as text that is why we can text align center */
+     /* Here i used it for the button */
+     text-align: center;
+     /* ------------------------------------------ */
+
+}
+
+.primary-heading {
+     color: white;
+     text-transform: uppercase;
+     margin-bottom: 6rem;
+}
+
+.primary-heading--main {
+     display: block;
+     font-size: 6rem;
+     font-weight: 400;
+     letter-spacing: 3.5rem;
+     animation-name: moveFromLeft;
+     animation-duration: 1s;
+}
+
+.primary-heading--sub {
+     display: block;
+     font-size: 2rem;
+     font-weight: 700;
+     letter-spacing: 1.75rem;
+     animation: moveFromRight 1s;
+     -webkit-animation: moveFromRight 1s;
+}
+
+@keyframes moveFromLeft {
+     0% {
+          opacity: 0;
+          transform: translateX(-60%);
+          -webkit-transform: translateX(-60%);
+          -moz-transform: translateX(-60%);
+          -ms-transform: translateX(-60%);
+          -o-transform: translateX(-60%);
+     }
+
+     80% {
+          transform: translateX(5%);
+          -webkit-transform: translateX(5%);
+          -moz-transform: translateX(5%);
+          -ms-transform: translateX(5%);
+          -o-transform: translateX(5%);
+     }
+
+     100% {
+          opacity: 1;
+          transform: translateX(0%);
+          -webkit-transform: translateX(0%);
+          -moz-transform: translateX(0%);
+          -ms-transform: translateX(0%);
+          -o-transform: translateX(0%);
+     }
+}
+
+@keyframes moveFromRight {
+     0% {
+          opacity: 0;
+          transform: translateX(60%);
+          -webkit-transform: translateX(60%);
+          -moz-transform: translateX(60%);
+          -ms-transform: translateX(60%);
+          -o-transform: translateX(60%);
+}
+
+     80% {
+          transform: translateX(-5%);
+          -webkit-transform: translateX(-5%);
+          -moz-transform: translateX(-5%);
+          -ms-transform: translateX(-5%);
+          -o-transform: translateX(-5%);
+}
+
+     100% {
+          opacity: 1;
+          transform: translateX(0%);
+          -webkit-transform: translateX(0%);
+          -moz-transform: translateX(0%);
+          -ms-transform: translateX(0%);
+          -o-transform: translateX(0%);
+     }
+}
+
+@keyframes moveFromBottom {
+     0% {
+          opacity: 0;
+          transform: translateY(60%);
+          -webkit-transform: translateY(60%);
+          -moz-transform: translateY(60%);
+          -ms-transform: translateY(60%);
+          -o-transform: translateY(60%);
+}
+
+     80% {
+          transform: translateY(-5%);
+          -webkit-transform: translateY(-5%);
+          -moz-transform: translateY(-5%);
+          -ms-transform: translateY(-5%);
+          -o-transform: translateY(-5%);
+}
+
+     100% {
+          opacity: 1;
+          transform: translateY(0%);
+          -webkit-transform: translateY(0%);
+          -moz-transform: translateY(0%);
+          -ms-transform: translateY(0%);
+          -o-transform: translateY(0%);
+}
+}
+
+.btn:link,
+.btn:visited {
+     text-decoration: none;
+     text-transform: uppercase;
+     padding: 1.5rem 3rem;
+     border-radius: 10rem;
+     -webkit-border-radius: 10rem;
+     -moz-border-radius: 10rem;
+     -ms-border-radius: 10rem;
+     -o-border-radius: 10rem;
+     display: inline-block;
+     transition: all .5s;
+     -webkit-transition: all .5s;
+     -moz-transition: all .5s;
+     -ms-transition: all .5s;
+     -o-transition: all .5s;
+     position: relative;
+}
+
+.btn:hover {
+     transform: translateY(-.3rem);
+     -webkit-transform: translateY(-.3rem);
+     -moz-transform: translateY(-.3rem);
+     -ms-transform: translateY(-.3rem);
+     -o-transform: translateY(-.3rem);
+     /* Keep more blur on hover */
+     box-shadow: 0 1rem 2rem;
+}
+
+.btn:active {
+     transform: translateY(-.1rem);
+     -webkit-transform: translateY(-.1rem);
+     -moz-transform: translateY(-.1rem);
+     -ms-transform: translateY(-.1rem);
+     -o-transform: translateY(-.1rem);
+
+     /* Make less blur on click */
+     box-shadow: 0 .5rem .1rem;
+}
+
+.btn--white {
+     color: #777;
+     background-color: white;
+}
+
+.btn:after {
+     content: "";
+     display: inline-block;
+     /*It is treated as the child of btn so height and width will be same of that of btn if given 100% */
+     height: 100%;
+     width: 100%;
+     border-radius: 10rem;
+     position: absolute;
+     top: 0;
+     left: 0;
+     z-index: -1;
+     transition: all .5s;
+}
+
+.btn--white:after {
+     background-color: white;
+}
+
+/* After pseudo element when the btn is in hover state */
+.btn:hover::after {
+     transform: scaleX(1.4) scaleY(1.6);
+     opacity: 0;
+}
+
+.btn--animated {
+     animation: moveFromBottom 1s;
+     /* Apply the styles of  0% before the animatin starts*/
+     animation-fill-mode: backwards;
+}
