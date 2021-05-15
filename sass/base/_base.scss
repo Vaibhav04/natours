@@ -1,0 +1,20 @@
+/* Basic app resetting */
+*,
+*::after,
+*::before {
+     margin: 0;
+     padding: 0;
+     box-sizing: inherit;
+}
+
+html {
+     /*  Will use rem for responsive design purpose*/
+     /* Using 10 px by default of given user agent fon size which is 16px (10 / 16)  */
+     /* Using percentage so as not to restrict the user to use fixed fontsize set by us */
+     font-size: 62.5%;
+}
+
+body {
+     /* Include margin and padding inside the box*/
+     box-sizing: border-box;
+}

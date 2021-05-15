@@ -1,0 +1,58 @@
+.btn {
+     &:link,
+     &:visited {
+          text-decoration: none;
+          text-transform: uppercase;
+          padding: 1.5rem 3rem;
+          border-radius: 10rem;
+          display: inline-block;
+          transition: all 0.5s;
+          position: relative;
+     }
+
+     &:hover {
+          transform: translateY(-0.3rem);
+          /* Keep more blur on hover */
+          box-shadow: 0 1rem 2rem;
+
+          /* After pseudo element when the btn is in hover state */
+          &::after {
+               transform: scaleX(1.4) scaleY(1.6);
+               opacity: 0;
+          }
+     }
+
+     &:active {
+          transform: translateY(-0.1rem);
+          /* Make less blur on click */
+          box-shadow: 0 0.5rem 0.1rem;
+     }
+
+     &--white {
+          color: $color-dark-grey;
+          background-color: $color-white;
+          &:after {
+               background-color: $color-white;
+          }
+     }
+
+     &:after {
+          content: "";
+          display: inline-block;
+          /*It is treated as the child of btn so height and width will be same of that of btn if given 100% */
+          height: 100%;
+          width: 100%;
+          border-radius: 10rem;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          transition: all 0.5s;
+     }
+
+     &--animated {
+          animation: moveFromBottom 1s;
+          /* Apply the styles of  0% before the animatin starts*/
+          animation-fill-mode: backwards;
+     }
+}
