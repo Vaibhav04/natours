@@ -6,6 +6,7 @@
      /* Whatever the width of viewport it will try to fit the element inside box*/
      background-size: cover;
      background-position: top;
+     -webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
      clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
 
      &__logo-box {

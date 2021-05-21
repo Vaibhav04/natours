@@ -1,0 +1,43 @@
+.composition {
+     position: relative;
+     &__photo {
+          // For flexible images for responsive design
+          width: 55%;
+          box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+          border-radius: 2px;
+          position: absolute;
+          transition: all 0.2s;
+          outline-offset: 2rem;
+
+          &--p1 {
+               left: 0;
+               top: -2rem;
+               z-index: 10;
+          }
+
+          &--p2 {
+               right: 0;
+               top: 0;
+               z-index: 10;
+          }
+
+          &--p3 {
+               left: 20%;
+               top: 10rem;
+               z-index: 10;
+          }
+
+          &:hover {
+               // Use it with outline offset to create frame effect
+               outline: 1.5rem solid $color-primary;
+               transform: scale(1.05) translateY(-.5rem);
+               box-shadow: 0 1.5rem 4rem rgba($color-black, 0.5);
+               z-index: 20;
+          }
+     }
+
+     // Select the photos which are not hovered
+     &:hover &__photo:not(:hover) {
+          transform: scale(.95);
+     }
+}

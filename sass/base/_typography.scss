@@ -1,7 +1,7 @@
 body {
      font-family: "Lato", sans-serif;
      font-weight: 400;
-     font-size: 1.6rem;
+     font-size: $default-font-size;
      line-height: 1.7;
      color: $color-dark-grey;
      padding: 3rem;
@@ -31,5 +31,19 @@ body {
           letter-spacing: 1.75rem;
           animation: moveFromRight 1s;
           -webkit-animation: moveFromRight 1s;
+     }
+}
+
+.tertiary-heading {
+     font-size: $default-font-size;
+     font-weight: 700;
+     text-transform: uppercase;
+}
+
+.paragraph {
+     font-size: $default-font-size;
+
+     &:not(:last-child) {
+          margin-bottom: 3rem;
      }
 }

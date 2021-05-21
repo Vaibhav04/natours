@@ -1,0 +1,16 @@
+.bg-video {
+     position: absolute;
+     top: 0;
+     left: 0;
+     // To make its full height as its parent
+     height: 100%;
+     width: 100%;
+     z-index: -1;
+     opacity: .15;
+     &__content {
+          height: 100%;
+          width: 100%;
+          // Similar to background size: cover ( for images )
+          object-fit: cover;  // Fill the entire parent by still maintaining the aspect ratio
+     }
+}

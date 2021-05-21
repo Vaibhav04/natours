@@ -1,0 +1,68 @@
+.story {
+     width: 75%;
+     margin: 0 auto;
+     box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+     border-radius: 3px;
+     padding: 6rem;
+     // To balanace the translatex position value because we shifted it to left by 3 rem
+     padding-left: 9rem;
+     font-size: $default-font-size;
+     transform: skewX(-10deg);
+
+     // Will not work because transform will take precedence so we will have to add them in shape as well as text seprately
+     // & > * {
+     //      transform: skewX(10deg);
+     // }
+     background-color: rgba($color-white, .60);
+
+     &__shape {
+          width: 15rem;
+          height: 15rem;
+          float: left;
+          // 50% is half the height or width of circle
+          // To make the content outside of box to appear just like an circle is near to it (i.e the text will be formatted just like there is a circle surrounding it)
+          // It works only with defined dimensions and floated element
+          -webkit-shape-outside: circle(50% at 50% 50%);
+          shape-outside: circle(50% at 50% 50%);
+          clip-path: circle(50% at 50% 50%);
+          // In case of float we should use transform because doing it with margin will mess up.
+          transform: translateX(-3rem) skewX(10deg);
+          position: relative;
+     }
+
+     // Take the full height of the shape that has included this image
+     // If not given it will show a part of image in given shape
+     &__image {
+          height: 100%;
+          transform: translateX(-4rem) scale(1.4);
+          transition: all .6s;
+     }
+
+     &__text {
+          transform: skewX(10deg);
+     }
+
+     &__caption {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -0%);
+          color: $color-white;
+          text-transform: uppercase;
+          font-size: 1.7rem;
+          text-align: center;
+          opacity: 0;
+          transition: all .6s;
+          backface-visibility: hidden;
+     }
+
+     &:hover &__caption {
+          opacity: 1;
+          transform: translate(-50%, -50%);
+     }
+
+     &:hover &__image {
+          transform: translateX(-4rem) scale(1);
+          filter: blur(3px) brightness(60%);
+     }
+}
