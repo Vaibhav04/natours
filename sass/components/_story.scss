@@ -15,6 +15,14 @@
      // }
      background-color: rgba($color-white, .60);
 
+     @include respond(tab-pot) {
+          width: 100%;
+     }
+
+     @include respond(phone) {
+          transform: skew(0);
+     }
+
      &__shape {
           width: 15rem;
           height: 15rem;
@@ -28,6 +36,10 @@
           // In case of float we should use transform because doing it with margin will mess up.
           transform: translateX(-3rem) skewX(10deg);
           position: relative;
+
+          @include respond(phone) {
+               transform: translateX(-3rem) skewX(0deg);
+          }
      }
 
      // Take the full height of the shape that has included this image
