@@ -18,8 +18,10 @@
           }
      }
 
-     // &__logo {
-     // }
+     &__logo {
+          width: 15rem;
+          height: auto;
+     }
 
      &__navigation {
           border-top: 1px solid $color-dark-grey-2;

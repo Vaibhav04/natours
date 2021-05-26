@@ -103,7 +103,36 @@
           </div>
           <div class="col-1-of-2">
             <div class="composition">
+              <!-- Resolution switching + density switching -->
               <img
+                alt="Photo-1"
+                srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+                sizes="(max-width: 56.25em) 20vw, 
+              (max-width: 37.5em) 30vw, 300px"
+                src="img/nat-1-large.jpg"
+                class="composition__photo composition__photo--p1"
+              />
+
+              <img
+                alt="Photo-2"
+                srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+                sizes="(max-width: 56.25em) 20vw, 
+              (max-width: 37.5em) 30vw, 300px"
+                src="img/nat-2-large.jpg"
+                class="composition__photo composition__photo--p2"
+              />
+
+              <img
+                alt="Photo-3"
+                srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+                sizes="(max-width: 56.25em) 20vw, 
+              (max-width: 37.5em) 30vw, 300px"
+                src="img/nat-3-large.jpg"
+                class="composition__photo composition__photo--p3"
+              />
+
+
+              <!-- <img
                 src="img/nat-1-large.jpg"
                 alt="Photo 1"
                 class="composition__photo composition__photo--p1"
@@ -115,7 +144,7 @@
                 src="img/nat-3-large.jpg"
                 alt="Photo 3"
                 class="composition__photo composition__photo--p3"
-              />
+              /> -->
             </div>
           </div>
         </div>
@@ -421,11 +450,26 @@
 
     <footer class="footer">
       <div class="footer__logo-box">
-        <img
-          src="./img/logo-green-2x.png"
+        <!-- Art direction in HTML -->
+        <picture class="footer__logo">
+          <source
+            media="(max-width: 37.5em)"
+            srcset="
+              ./img/logo-green-small-1x.png 1x,
+              ./img/logo-green-small-2x.png 2x
+            "
+          />
+          <img
+            srcset="./img/logo-green-1x.png 1x, ./img/logo-green-2x.png 2x"
+            src="./img/logo-green-2x.png"
+          />
+        </picture>
+        <!-- Density switching in HTML -->
+        <!-- <img
+          srcset="./img/logo-green-1x.png 1x, ./img/logo-green-2x.png 2x"
           alt="Full logo"
           class="footer__logo"
-        />
+        /> -->
       </div>
       <div class="row">
         <div class="col-1-of-2">
@@ -461,23 +505,36 @@
       <div class="popup__content">
         <div class="popup__left">
           <img src="./img/nat-8.jpg" alt="Tour photo" class="popup__img" />
-          <img
-            src="./img/nat-9.jpg"
-            alt="Tour photo" class="popup__img"
-          />
+          <img src="./img/nat-9.jpg" alt="Tour photo" class="popup__img" />
         </div>
         <div class="popup__right">
-            <a href="#tours-section" class="popup__close">&times;</a>
-            <h2 class="heading-secondary u-margin-bottom-small">Start booking now</h2>
-            <h3 class="heading-tertiary u-margin-bottom-small">Important &ndash; Please read these terms before booking</h3>
-            <p class="popup__text">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto nemo pariatur iusto veniam vel temporibus, esse odit quis quasi eius! Enim tempora excepturi voluptate animi? Rem, odit. Tempora, at voluptate.
-                Sint ex recusandae sunt, distinctio hic tempora maxime illum quasi, officiis at voluptatibus placeat asperiores modi ducimus corrupti, odit iste dolorum voluptatum ullam! Id rerum placeat quae officia nostrum itaque.
-                Quod doloribus harum, voluptas delectus commodi doloremque odit saepe ratione esse aliquam illo possimus consectetur amet excepturi perspiciatis, odio ipsam sint. Quidem assumenda distinctio adipisci velit quia illo, aperiam ea?
-                Blanditiis, facere explicabo! Delectus quo est eligendi! Quisquam eveniet in nemo nulla animi labore dignissimos reiciendis. Repudiandae, atque magni asperiores, quod non at itaque porro praesentium facilis eius sit laboriosam.
-                Harum aliquam cumque iusto, debitis soluta vitae vero tempore, provident quo exercitationem nisi quae molestias iure quia repellat, voluptatibus fugit eius. Nisi esse enim eum facere animi. Sequi, enim ullam.
-            </p>
-            <a href="#" class="btn btn--green">Book now</a>
+          <a href="#tours-section" class="popup__close">&times;</a>
+          <h2 class="heading-secondary u-margin-bottom-small">
+            Start booking now
+          </h2>
+          <h3 class="heading-tertiary u-margin-bottom-small">
+            Important &ndash; Please read these terms before booking
+          </h3>
+          <p class="popup__text">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto
+            nemo pariatur iusto veniam vel temporibus, esse odit quis quasi
+            eius! Enim tempora excepturi voluptate animi? Rem, odit. Tempora, at
+            voluptate. Sint ex recusandae sunt, distinctio hic tempora maxime
+            illum quasi, officiis at voluptatibus placeat asperiores modi
+            ducimus corrupti, odit iste dolorum voluptatum ullam! Id rerum
+            placeat quae officia nostrum itaque. Quod doloribus harum, voluptas
+            delectus commodi doloremque odit saepe ratione esse aliquam illo
+            possimus consectetur amet excepturi perspiciatis, odio ipsam sint.
+            Quidem assumenda distinctio adipisci velit quia illo, aperiam ea?
+            Blanditiis, facere explicabo! Delectus quo est eligendi! Quisquam
+            eveniet in nemo nulla animi labore dignissimos reiciendis.
+            Repudiandae, atque magni asperiores, quod non at itaque porro
+            praesentium facilis eius sit laboriosam. Harum aliquam cumque iusto,
+            debitis soluta vitae vero tempore, provident quo exercitationem nisi
+            quae molestias iure quia repellat, voluptatibus fugit eius. Nisi
+            esse enim eum facere animi. Sequi, enim ullam.
+          </p>
+          <a href="#" class="btn btn--green">Book now</a>
         </div>
       </div>
     </div>

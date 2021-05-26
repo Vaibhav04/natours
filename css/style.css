@@ -317,12 +317,15 @@ body {
 .header {
   position: relative;
   height: 95vh;
-  background-image: linear-gradient(to right, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
+  background-image: linear-gradient(to right, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero-small.jpg");
   /* Whatever the width of viewport it will try to fit the element inside box*/
   background-size: cover;
   background-position: top;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%); }
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+    .header {
+      background-image: linear-gradient(to right, rgba(255, 185, 112, 0.8), rgba(255, 119, 48, 0.8)), url("../img/hero.jpg"); } }
   @media (max-width: 37.5em) {
     .header {
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 95%);
@@ -699,6 +702,9 @@ body {
     @media (max-width: 56.25em) {
       .footer__logo-box {
         margin-bottom: 6rem; } }
+  .footer__logo {
+    width: 15rem;
+    height: auto; }
   .footer__navigation {
     border-top: 1px solid #999;
     padding-top: 2rem;

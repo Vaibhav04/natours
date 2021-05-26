@@ -2,12 +2,25 @@
      position: relative;
      height: 95vh;
      background-image: linear-gradient(to right, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)),
-          url("../img/hero.jpg");
+          url("../img/hero-small.jpg");
      /* Whatever the width of viewport it will try to fit the element inside box*/
      background-size: cover;
      background-position: top;
      -webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
      clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
+
+     // Apple retina display resolution
+     // When the resolution is 2x( high pixel density) and width is more than 600
+     // For rest of the purpose the smaller image is enough
+     // 600px = 37.5em
+     // 2000px = 125em
+
+     @media (min-resolution: 192dpi) and (min-width: 37.5em), 
+     // Only for larger screen sizes
+     (min-width: 125em) {
+          background-image: linear-gradient(to right, rgba($color-secondary-light, 0.8), rgba($color-secondary-dark, 0.8)),
+               url("../img/hero.jpg");
+     }
 
      @include respond(phone) {
           -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 95%);
