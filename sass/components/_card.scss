@@ -161,19 +161,21 @@
           font-weight: 100;
      }
 
-     @include respond(tab-pot) {
+     // @include respond(tab-pot) {
+     @media only screen and (max-width: 56.25em), 
+          // For the tablet devices that has large screnn but no hover
+            only screen and (hover: none) {
           height: auto;
           border-radius: 3px;
           box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
           background-color: $color-white;
-
 
           &__side {
                height: auto;
                position: relative;
                width: 100%;
                box-shadow: none;
-               
+
                &--back {
                     // By default it should be flipped
                     transform: rotateY(0);
