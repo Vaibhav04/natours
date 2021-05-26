@@ -16,6 +16,7 @@
           left: 0;
           width: 100%;
           // Hide the back part of an element
+          -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
           border-radius: 3px;
           // To make this border-radius to work because otherwise image is overflowing hence it is removing border-radius
